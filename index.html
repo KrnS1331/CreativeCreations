@@ -1,70 +1,213 @@
-<!-- Circular MoolMantar Resin Art Modal -->
-<div id="circularMoolmantarModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('circularMoolmantarModal')">&times;</span>
-        <h3>Circular MoolMantar Resin Art</h3>
-        <p>This 240mm circular resin art piece features the MoolMantar in gold lettering, with an Ik Onkaar symbol at the top left and a Khanda symbol at the bottom right. The black and clear resin, complemented by gold flakes, creates a striking, spiritual display for any space. It also comes with a Stand (Silver or Black) to hold it.</p>
-        <p><strong>Price: $75.00</strong></p>
-        
-        <!-- Quantity Selector -->
-        <label for="quantityCircular">Quantity:</label>
-        <select id="quantityCircular" name="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        
-        <!-- Stand Color Selector -->
-        <label for="standColorCircular">Choose Stand Color:</label>
-        <select id="standColorCircular" name="standColor">
-            <option value="Silver">Silver Stand</option>
-            <option value="Black">Black Stand</option>
-        </select>
-        
-        <!-- Add to Cart Button -->
-        <button>Add to Cart</button>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Creations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            margin-top: 70px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0073e6;
+            font-weight: bold;
+        }
+        section {
+            padding: 100px 20px 20px;
+            margin-top: 100px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
 
-<!-- Rectangular MoolMantar Resin Art Modal -->
-<div id="rectangularMoolmantarModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('rectangularMoolmantarModal')">&times;</span>
-        <h3>Rectangular MoolMantar Resin Art</h3>
-        <p>This 290x175mm resin piece features the MoolMantar in gold lettering, with an 'Ik Onkaar' symbol on the top left, and a 'Khanda' symbol at the bottom right. The black and clear resin is accented with gold flakes, creating a beautiful and spiritual piece for any space. It also comes with a Stand (Silver or Black) to hold it.</p>
-        <p><strong>Price: $75.00</strong></p>
-        
-        <!-- Quantity Selector -->
-        <label for="quantityRectangular">Quantity:</label>
-        <select id="quantityRectangular" name="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        
-        <!-- Stand Color Selector -->
-        <label for="standColorRectangular">Choose Stand Color:</label>
-        <select id="standColorRectangular" name="standColor">
-            <option value="Silver">Silver Stand</option>
-            <option value="Black">Black Stand</option>
-        </select>
-        
-        <!-- Add to Cart Button -->
-        <button>Add to Cart</button>
+    <header>
+        <h1>Creative Creations</h1>
+        <p>Quality products at great prices</p>
+    </header>
+
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="products">
+        <h2>Our Products</h2>
+
+        <!-- Product 1: Rectangular MoolMantar Resin Art -->
+        <div class="product" onclick="openModal(1)">
+            <img src="product1.jpg" alt="Rectangular MoolMantar Resin Art">
+            <h3>Rectangular MoolMantar Resin Art</h3>
+            <p>$75.00</p>
+        </div>
+
+        <!-- Product 2: Circular MoolMantar Resin Art -->
+        <div class="product" onclick="openModal(2)">
+            <img src="product2.jpg" alt="Circular MoolMantar Resin Art">
+            <h3>Circular MoolMantar Resin Art</h3>
+            <p>$75.00</p>
+        </div>
+
+        <!-- Product 3: Wooden Waheguru Art -->
+        <div class="product" onclick="openModal(3)">
+            <img src="product3.jpg" alt="Wooden Waheguru Art">
+            <h3>Wooden Waheguru Art</h3>
+            <p>$15.00</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: +61 422 698 744</p>
+        <p>Instagram: <a href="https://instagram.com/creative_creations1322">creative_creations1322</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Creative Creations</p>
+    </footer>
+
+    <!-- Modal for Product 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(1)">&times;</span>
+            <h2>Rectangular MoolMantar Resin Art</h2>
+            <img src="product1.jpg" alt="Rectangular MoolMantar Resin Art">
+            <p>This 290x175mm resin piece features the MoolMantar in gold lettering, with an "Ik Onkaar" symbol on the top left, and a "Khanda" symbol at the bottom right. The black and clear resin is accented with gold flakes, creating a beautiful and spiritual piece for any space. It also comes with a Stand (Silver or Black) to hold it.</p>
+            <label for="quantity1">Quantity:</label>
+            <input type="number" id="quantity1" name="quantity1" min="1" max="10" value="1">
+            <br>
+            <label for="stand1">Select Stand:</label>
+            <select id="stand1" name="stand1">
+                <option value="silver">Silver</option>
+                <option value="black">Black</option>
+            </select>
+            <br>
+            <button>Add to Cart</button>
+        </div>
     </div>
-</div>
+
+    <!-- Modal for Product 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(2)">&times;</span>
+            <h2>Circular MoolMantar Resin Art</h2>
+            <img src="product2.jpg" alt="Circular MoolMantar Resin Art">
+            <p>This 240mm circular resin art piece features the MoolMantar in gold lettering, with an Ik Onkaar symbol at the top left and a Khanda symbol at the bottom right. The black and clear resin, complemented by gold flakes, creates a striking, spiritual display for any space. It also comes with a Stand (Silver or Black) to hold it.</p>
+            <label for="quantity2">Quantity:</label>
+            <input type="number" id="quantity2" name="quantity2" min="1" max="10" value="1">
+            <br>
+            <label for="stand2">Select Stand:</label>
+            <select id="stand2" name="stand2">
+                <option value="silver">Silver</option>
+                <option value="black">Black</option>
+            </select>
+            <br>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Modal for Product 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(3)">&times;</span>
+            <h2>Wooden Waheguru Art</h2>
+            <img src="product3.jpg" alt="Wooden Waheguru Art">
+            <p>This 90x240mm piece is crafted from natural solid wood and features the word "Waheguru" in elegant gold Punjabi lettering. The top of the piece is black, gradually blending into white, creating a soothing gradient effect. A beautiful and meaningful addition to any space, this art piece reflects both spiritual elegance and the beauty of the natural solid wood.</p>
+            <label for="quantity3">Quantity:</label>
+            <input type="number" id="quantity3" name="quantity3" min="1" max="10" value="1">
+            <br>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(productNumber) {
+            document.getElementById('modal' + productNumber).style.display = "block";
+        }
+
+        function closeModal(productNumber) {
+            document.getElementById('modal' + productNumber).style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
 
