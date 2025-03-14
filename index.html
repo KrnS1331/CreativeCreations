@@ -1,204 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Creations</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            transition: all 0.3s ease-in-out;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-            text-align: center;
-        }
-        nav {
-            margin: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #333;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .product {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 15px;
-            background-color: white;
-            width: 200px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-        .product:hover {
-            transform: scale(1.05);
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-        }
-        .product h3 {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        .product p {
-            font-size: 1.1em;
-            color: #555;
-        }
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        .product-detail {
-            display: none;
-            text-align: left;
-            padding: 20px;
-            background-color: #fff;
-            margin: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .product-detail h3 {
-            font-size: 1.5em;
-        }
-        .social-links {
-            margin-top: 10px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            color: white;
-            font-size: 18px;
-        }
-        .social-links a:hover {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Creative Creations</h1>
-        <p>Your one-stop shop for cultural and religious pieces</p>
-    </header>
-
-    <nav>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="products">
-        <h2>Our Featured Products</h2>
-        <div class="product-container">
-            <!-- Product 1 -->
-            <div class="product" onclick="showProductDetail('product1')">
-                <img src="product1.jpg" alt="Large MoolMantar Clock">
-                <h3>Large MoolMantar Clock</h3>
-                <p>$65.00</p>
-            </div>
-            <!-- Product 2 -->
-            <div class="product" onclick="showProductDetail('product2')">
-                <img src="product2.jpg" alt="Wooden Waheguru">
-                <h3>Wooden Waheguru</h3>
-                <p>$20.00</p>
-            </div>
-            <!-- Product 3 -->
-            <div class="product" onclick="showProductDetail('product3')">
-                <img src="product3.jpg" alt="Small Stand">
-                <h3>Small Stand</h3>
-                <p>$5.00</p>
-            </div>
-        </div>
+<!-- Circular MoolMantar Resin Art Modal -->
+<div id="circularMoolmantarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('circularMoolmantarModal')">&times;</span>
+        <h3>Circular MoolMantar Resin Art</h3>
+        <p>This 240mm circular resin art piece features the MoolMantar in gold lettering, with an Ik Onkaar symbol at the top left and a Khanda symbol at the bottom right. The black and clear resin, complemented by gold flakes, creates a striking, spiritual display for any space. It also comes with a Stand (Silver or Black) to hold it.</p>
+        <p><strong>Price: $75.00</strong></p>
         
-        <!-- Product Details Section (hidden initially) -->
-        <div id="product1" class="product-detail">
-            <h3>Large MoolMantar Clock</h3>
-            <p>A wonderful piece of resin, with Moolmantar on it. It features a wonderful cultural and religious connection.</p>
-            <p><strong>Price: </strong>$65.00</p>
-            <p><strong>Specifications:</strong></p>
-            <ul>
-                <li>Material: Resin</li>
-                <li>Design: Moolmantar</li>
-                <li>Size: Large</li>
-            </ul>
-            <button onclick="closeProductDetail('product1')">Close</button>
-        </div>
+        <!-- Quantity Selector -->
+        <label for="quantityCircular">Quantity:</label>
+        <select id="quantityCircular" name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
         
-        <div id="product2" class="product-detail">
-            <h3>Wooden Waheguru</h3>
-            <p>A wonderful small piece of wood, with Waheguru written and a strong resin overlay.</p>
-            <p><strong>Price: </strong>$20.00</p>
-            <p><strong>Specifications:</strong></p>
-            <ul>
-                <li>Material: Wood</li>
-                <li>Overlay: Resin</li>
-                <li>Size: Small</li>
-            </ul>
-            <button onclick="closeProductDetail('product2')">Close</button>
-        </div>
+        <!-- Stand Color Selector -->
+        <label for="standColorCircular">Choose Stand Color:</label>
+        <select id="standColorCircular" name="standColor">
+            <option value="Silver">Silver Stand</option>
+            <option value="Black">Black Stand</option>
+        </select>
         
-        <div id="product3" class="product-detail">
-            <h3>Small Stand</h3>
-            <p>A small stand to hold your pieces.</p>
-            <p><strong>Price: </strong>$5.00</p>
-            <p><strong>Specifications:</strong></p>
-            <ul>
-                <li>Material: Wood</li>
-                <li>Size: Small</li>
-            </ul>
-            <button onclick="closeProductDetail('product3')">Close</button>
-        </div>
-    </section>
+        <!-- Add to Cart Button -->
+        <button>Add to Cart</button>
+    </div>
+</div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@creativecreations.com</p>
-        <p>Phone: 123-456-7890</p>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
-    </section>
+<!-- Rectangular MoolMantar Resin Art Modal -->
+<div id="rectangularMoolmantarModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('rectangularMoolmantarModal')">&times;</span>
+        <h3>Rectangular MoolMantar Resin Art</h3>
+        <p>This 290x175mm resin piece features the MoolMantar in gold lettering, with an 'Ik Onkaar' symbol on the top left, and a 'Khanda' symbol at the bottom right. The black and clear resin is accented with gold flakes, creating a beautiful and spiritual piece for any space. It also comes with a Stand (Silver or Black) to hold it.</p>
+        <p><strong>Price: $75.00</strong></p>
+        
+        <!-- Quantity Selector -->
+        <label for="quantityRectangular">Quantity:</label>
+        <select id="quantityRectangular" name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        
+        <!-- Stand Color Selector -->
+        <label for="standColorRectangular">Choose Stand Color:</label>
+        <select id="standColorRectangular" name="standColor">
+            <option value="Silver">Silver Stand</option>
+            <option value="Black">Black Stand</option>
+        </select>
+        
+        <!-- Add to Cart Button -->
+        <button>Add to Cart</button>
+    </div>
+</div>
 
-    <footer>
-        <p>&copy; 2025 Creative Creations</p>
-    </footer>
-
-    <script>
-        // Function to show product detail
-        function showProductDetail(productId) {
-            document.getElementById(productId).style.display = 'block';
-            window.scrollTo(0, document.getElementById(productId).offsetTop); // Scroll to the product detail section
-        }
-
-        // Function to close product detail
-        function closeProductDetail(productId) {
-            document.getElementById(productId).style.display = 'none';
-        }
-    </script>
-</body>
-</html>
